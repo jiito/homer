@@ -3,13 +3,12 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import { useSupabase } from "../utils";
-import { Login } from "../components/auth";
+import { Auth, Login } from "../components/auth";
 import styled from "styled-components";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { supabase, session } = useSupabase();
   return (
     <>
       <Head>
@@ -17,7 +16,7 @@ export default function Home() {
       </Head>
       <MainContatiner>
         <h1>Welcome to Homer</h1>
-        {!session ? <Login /> : <p>Logged in!</p>}
+        <Auth />
       </MainContatiner>
     </>
   );
