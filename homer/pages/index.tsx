@@ -1,12 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 import { useSupabase } from "../utils";
 import { Auth } from "../components/auth";
 import styled from "styled-components";
-
-const inter = Inter({ subsets: ["latin"] });
+import { InterestForm } from "../components/forms/interestForm";
+import { darkBlue, orange } from "../styles/theme";
 
 export default function Home() {
   const { supabase, session } = useSupabase();
@@ -16,12 +13,17 @@ export default function Home() {
         <title>Homer</title>
       </Head>
       <MainContatiner>
-        <h1>Welcome to Homer</h1>
+        <Title>Homer</Title>
         <Auth />
+        <InterestForm />
       </MainContatiner>
     </>
   );
 }
+const Title = styled.h1`
+  margin: 40px;
+  color: ${darkBlue};
+`;
 
 const MainContatiner = styled.main`
   margin: auto;
@@ -29,5 +31,5 @@ const MainContatiner = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  padding: 0 4em;
 `;

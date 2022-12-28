@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider, Session } from "@supabase/auth-helpers-react";
@@ -14,12 +13,16 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
   }
 `;
 const theme: DefaultTheme = {
   colors: {
-    primary: "#111",
-    secondary: "#0070f3",
+    darkBlue: "#14213d",
+    black: "#000000",
+    orange: "#fca311",
+    gray: "#e5e5e5",
+    white: "#ffffff",
   },
 };
 export default function App({
